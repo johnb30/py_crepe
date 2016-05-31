@@ -1,3 +1,7 @@
+'''
+Run on GPU: THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python main.py
+'''
+
 from __future__ import print_function
 from __future__ import division
 import json
@@ -12,9 +16,9 @@ np.random.seed(0123)  # for reproducibility
 subset = None
 
 #Whether to save model parameters
-save = True
-model_name_path = 'crepe_model.json'
-model_weights_path = 'crepe_model_weights.h5'
+save = False
+model_name_path = 'params/crepe_model.json'
+model_weights_path = 'params/crepe_model_weights.h5'
 
 #Maximum length. Longer gets chopped. Shorter gets padded.
 maxlen = 1014

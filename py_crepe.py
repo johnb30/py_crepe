@@ -1,7 +1,3 @@
-'''
-Run on GPU: THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python py_crepe.py
-'''
-
 from keras.models import Model
 from keras.optimizers import SGD
 from keras.layers import Input, Dense, Dropout, Flatten
