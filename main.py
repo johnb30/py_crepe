@@ -37,14 +37,13 @@ cat_output = 4
 batch_size = 80
 nb_epoch = 10
 
-print('Creating vocab...')
-vocab, reverse_vocab, vocab_size, check = data_helpers.create_vocab_set()
-
 print('Loading data...')
 #Expect x to be a list of sentences. Y to be a one-hot encoding of the
 #categories.
 (xt, yt), (x_test, y_test) = data_helpers.load_ag_data()
 
+print('Creating vocab...')
+vocab, reverse_vocab, vocab_size, check = data_helpers.create_vocab_set()
 
 test_data = data_helpers.encode_data(x_test, maxlen, vocab, vocab_size, check)
 
