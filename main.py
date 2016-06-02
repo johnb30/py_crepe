@@ -89,7 +89,7 @@ for e in xrange(nb_epoch):
 
     test_accuracy = 0.0
     test_loss = 0.0
-    test_step = 0
+    test_step = 1
     for x_test_batch, y_test_batch in test_batches:
         f_ev = model.test_on_batch(x_test_batch, y_test_batch)
         test_loss += f_ev[0]
