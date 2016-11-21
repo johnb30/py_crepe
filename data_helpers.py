@@ -49,7 +49,7 @@ def encode_data(x, maxlen, vocab, vocab_size, check):
         sent_array = np.zeros((maxlen, vocab_size))
         chars = list(sent.lower().replace(' ', ''))
         for c in chars:
-            if counter >= 1014:
+            if counter >= maxlen:
                 pass
             else:
                 char_array = np.zeros(vocab_size, dtype=np.int)
