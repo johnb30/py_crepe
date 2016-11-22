@@ -95,7 +95,7 @@ for e in xrange(nb_epoch):
         test_loss += f_ev[0]
         test_loss_avg = loss / step
         test_accuracy += f_ev[1]
-        test_accuracy_avg = accuracy / step
+        test_accuracy_avg = test_accuracy / test_step
         test_step += 1
     stop = datetime.datetime.now()
     e_elap = stop - start
