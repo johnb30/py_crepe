@@ -90,17 +90,18 @@ for e in xrange(nb_epoch):
     test_accuracy = 0.0
     test_loss = 0.0
     test_step = 1
+    
     for x_test_batch, y_test_batch in test_batches:
         f_ev = model.test_on_batch(x_test_batch, y_test_batch)
         test_loss += f_ev[0]
-        test_loss_avg = loss / step
+        test_loss_avg = test_loss / test_step
         test_accuracy += f_ev[1]
         test_accuracy_avg = test_accuracy / test_step
         test_step += 1
     stop = datetime.datetime.now()
     e_elap = stop - start
     t_elap = stop - initial
-    print('Epoch {}. Loss: {}. Accuracy: {}\nEpoch time: {}. Total time: {}\n'.format(e, test_loss, test_accuracy, e_elap, t_elap))
+    print('Epoch {}. Loss: {}. Accuracy: {}\nEpoch time: {}. Total time: {}\n'.format(e, test_loss_avg, test_accuracy_avg, e_elap, t_elap))
 
 if save:
     print('Saving model params...')
